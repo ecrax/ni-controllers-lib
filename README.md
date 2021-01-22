@@ -1,4 +1,4 @@
-# Traktor F1, Traktor D2, and Maschine MK3 controller access
+# Traktor F1, Traktor D2, Maschine MK3, and Maschine Mk2 Mikro controller access
 
 This is a forked version of https://github.com/met5678/node-traktor-f1 with
 the following changes:
