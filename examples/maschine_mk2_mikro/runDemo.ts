@@ -33,9 +33,12 @@ export const runDemo = (mk2mikro: MaschineMk2Mikro, jpegData: BufferLike) =>
 
     mk2mikro.oled_displays.mainScreen.clearScreen();
 
+    // XXX Force a re-interpretation of the ImageData such that the data field,
+    // which is a Uint8Array can be viewed as a Uint8ClampedArray.  The types
+    // are functionally equivalent for our purposes here.
     const data = jpeg.decode(jpegData, {
       useTArray: true,
-    });
+    }) as unknown as ImageData;
 
     mk2mikro.oled_displays.mainScreen.drawImage(data, true);
 

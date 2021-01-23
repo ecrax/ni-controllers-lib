@@ -697,7 +697,7 @@
   "oled_displays": {
     "mainScreen": {
       "length": 265,
-      "firstByte": "0xe0",
+      "firstByte": 224,
       "width": 128,
       "height": 64
     }
