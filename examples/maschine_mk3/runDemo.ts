@@ -40,15 +40,11 @@ export const runDemo = (mk3: MaschineMk3, jpegData: BufferLike) =>
       const li0 = li - 1;
       const name = `p${i}`;
       const led = mk3.indexed_leds[name];
-      led.setColorByNumberHelper(li0, false, false);
+      led.setColorByNumberHelper(li0, false, true);
       // note, could alternately do a single listen on "p:pressure", which passes
       // the index.
       mk3.on(`${name}:pressure`, (pressure) => {
-        led.setColorByNumberHelper(
-          li0,
-          pressure > 2048,
-          pressure % 2048 > 1024
-        );
+        led.setColorByNumberHelper(li0, pressure > 2, false);
       });
     }
 
